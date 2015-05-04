@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F122B63E1AF7016400539423 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B63D1AF7016400539423 /* main.m */; };
+		F122B6411AF7016400539423 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B6401AF7016400539423 /* AppDelegate.m */; };
+		F122B6441AF7016400539423 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B6431AF7016400539423 /* ViewController.m */; };
+		F122B6471AF7016400539423 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F122B6451AF7016400539423 /* Main.storyboard */; };
+		F122B6491AF7016400539423 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F122B6481AF7016400539423 /* Images.xcassets */; };
+		F122B64C1AF7016400539423 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F122B64A1AF7016400539423 /* LaunchScreen.xib */; };
+		F122B6581AF7016400539423 /* Squire_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B6571AF7016400539423 /* Squire_iOSTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F122B6521AF7016400539423 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F122B6301AF7016400539423 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F122B6371AF7016400539423;
+			remoteInfo = "Squire-iOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F122B6381AF7016400539423 /* Squire-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Squire-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F122B63C1AF7016400539423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F122B63D1AF7016400539423 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F122B63F1AF7016400539423 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F122B6401AF7016400539423 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F122B6421AF7016400539423 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F122B6431AF7016400539423 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F122B6461AF7016400539423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F122B6481AF7016400539423 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F122B64B1AF7016400539423 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F122B6511AF7016400539423 /* Squire-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Squire-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F122B6561AF7016400539423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F122B6571AF7016400539423 /* Squire_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Squire_iOSTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F122B6351AF7016400539423 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F122B64E1AF7016400539423 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F122B62F1AF7016400539423 = {
+			isa = PBXGroup;
+			children = (
+				F122B63A1AF7016400539423 /* Squire-iOS */,
+				F122B6541AF7016400539423 /* Squire-iOSTests */,
+				F122B6391AF7016400539423 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F122B6391AF7016400539423 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F122B6381AF7016400539423 /* Squire-iOS.app */,
+				F122B6511AF7016400539423 /* Squire-iOSTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F122B63A1AF7016400539423 /* Squire-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				F122B63F1AF7016400539423 /* AppDelegate.h */,
+				F122B6401AF7016400539423 /* AppDelegate.m */,
+				F122B6421AF7016400539423 /* ViewController.h */,
+				F122B6431AF7016400539423 /* ViewController.m */,
+				F122B6451AF7016400539423 /* Main.storyboard */,
+				F122B6481AF7016400539423 /* Images.xcassets */,
+				F122B64A1AF7016400539423 /* LaunchScreen.xib */,
+				F122B63B1AF7016400539423 /* Supporting Files */,
+			);
+			path = "Squire-iOS";
+			sourceTree = "<group>";
+		};
+		F122B63B1AF7016400539423 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F122B63C1AF7016400539423 /* Info.plist */,
+				F122B63D1AF7016400539423 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F122B6541AF7016400539423 /* Squire-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				F122B6571AF7016400539423 /* Squire_iOSTests.m */,
+				F122B6551AF7016400539423 /* Supporting Files */,
+			);
+			path = "Squire-iOSTests";
+			sourceTree = "<group>";
+		};
+		F122B6551AF7016400539423 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F122B6561AF7016400539423 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F122B6371AF7016400539423 /* Squire-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F122B65B1AF7016400539423 /* Build configuration list for PBXNativeTarget "Squire-iOS" */;
+			buildPhases = (
+				F122B6341AF7016400539423 /* Sources */,
+				F122B6351AF7016400539423 /* Frameworks */,
+				F122B6361AF7016400539423 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Squire-iOS";
+			productName = "Squire-iOS";
+			productReference = F122B6381AF7016400539423 /* Squire-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F122B6501AF7016400539423 /* Squire-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F122B65E1AF7016400539423 /* Build configuration list for PBXNativeTarget "Squire-iOSTests" */;
+			buildPhases = (
+				F122B64D1AF7016400539423 /* Sources */,
+				F122B64E1AF7016400539423 /* Frameworks */,
+				F122B64F1AF7016400539423 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F122B6531AF7016400539423 /* PBXTargetDependency */,
+			);
+			name = "Squire-iOSTests";
+			productName = "Squire-iOSTests";
+			productReference = F122B6511AF7016400539423 /* Squire-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F122B6301AF7016400539423 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = CinnamonRoll;
+				TargetAttributes = {
+					F122B6371AF7016400539423 = {
+						CreatedOnToolsVersion = 6.3.1;
+					};
+					F122B6501AF7016400539423 = {
+						CreatedOnToolsVersion = 6.3.1;
+						TestTargetID = F122B6371AF7016400539423;
+					};
+				};
+			};
+			buildConfigurationList = F122B6331AF7016400539423 /* Build configuration list for PBXProject "Squire-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F122B62F1AF7016400539423;
+			productRefGroup = F122B6391AF7016400539423 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F122B6371AF7016400539423 /* Squire-iOS */,
+				F122B6501AF7016400539423 /* Squire-iOSTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F122B6361AF7016400539423 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F122B6471AF7016400539423 /* Main.storyboard in Resources */,
+				F122B64C1AF7016400539423 /* LaunchScreen.xib in Resources */,
+				F122B6491AF7016400539423 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F122B64F1AF7016400539423 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F122B6341AF7016400539423 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F122B6441AF7016400539423 /* ViewController.m in Sources */,
+				F122B6411AF7016400539423 /* AppDelegate.m in Sources */,
+				F122B63E1AF7016400539423 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F122B64D1AF7016400539423 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F122B6581AF7016400539423 /* Squire_iOSTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F122B6531AF7016400539423 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F122B6371AF7016400539423 /* Squire-iOS */;
+			targetProxy = F122B6521AF7016400539423 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F122B6451AF7016400539423 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F122B6461AF7016400539423 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F122B64A1AF7016400539423 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F122B64B1AF7016400539423 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F122B6591AF7016400539423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F122B65A1AF7016400539423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F122B65C1AF7016400539423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Squire-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F122B65D1AF7016400539423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Squire-iOS/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F122B65F1AF7016400539423 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Squire-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Squire-iOS.app/Squire-iOS";
+			};
+			name = Debug;
+		};
+		F122B6601AF7016400539423 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Squire-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Squire-iOS.app/Squire-iOS";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F122B6331AF7016400539423 /* Build configuration list for PBXProject "Squire-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F122B6591AF7016400539423 /* Debug */,
+				F122B65A1AF7016400539423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F122B65B1AF7016400539423 /* Build configuration list for PBXNativeTarget "Squire-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F122B65C1AF7016400539423 /* Debug */,
+				F122B65D1AF7016400539423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F122B65E1AF7016400539423 /* Build configuration list for PBXNativeTarget "Squire-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F122B65F1AF7016400539423 /* Debug */,
+				F122B6601AF7016400539423 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F122B6301AF7016400539423 /* Project object */;
+}
