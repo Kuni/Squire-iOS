@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "SQRichEditorViewController.h"
+
 
 @interface ViewController ()
 
@@ -19,9 +21,18 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+-(IBAction)enterEditorView
+{
+    SQRichEditorViewController *vc = [[SQRichEditorViewController alloc] init];
+    
+    UINavigationController *nvc = [[UINavigationController alloc] initWithRootViewController:vc];
+    
+    [self presentViewController:nvc animated:YES completion:nil];
+    
+
 }
+
+
 
 @end

@@ -7,31 +7,151 @@
 //
 
 #import "SQRichEditorViewController.h"
+#import "SQSquireEditor.h"
+#import "SQScrollView.h"
 
-@interface SQRichEditorViewController ()
+@interface SQRichEditorViewController ()<UIActionSheetDelegate>
+
+
+@property(nonatomic, weak)SQScrollView      *scrollView;
+
+@property(nonatomic, weak)UIWebView         *editorWebView;
+@property(nonatomic, strong)SQSquireEditor  *editorController;
+
 
 @end
 
 @implementation SQRichEditorViewController
 
+
+- (void)loadView
+{
+    SQScrollView *scrollView = [[SQScrollView alloc] initWithFrame:CGRectZero];
+    self.view = scrollView;
+    self.scrollView = scrollView;
+}
+
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     // Do any additional setup after loading the view.
+    
+    
+    // SQSquireEditor必要。
+    self.navigationController.navigationBar.translucent = NO;
+    self.automaticallyAdjustsScrollViewInsets = NO;  // 防止WebBrowserView 因鍵盤上來被移動。
+    self.editorController = [[SQSquireEditor alloc] initWithWebView:self.scrollView.webView];
+
+    
+    // Style
+    self.scrollView.backgroundColor = [UIColor whiteColor];
+    
+    
+    UIBarButtonItem *closeItem = [[UIBarButtonItem alloc] initWithTitle:@"close" style:UIBarButtonItemStylePlain target:self action:@selector(closeAction:)];
+    self.navigationItem.rightBarButtonItems = @[closeItem];
+
+    /// 這個必要的
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshScrollView) name:SQSquireEditorFrameChange object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardWillShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(void)refreshScrollView
+{
+    NSLog(@"refresh scrollview");
+    if(self.scrollView.contentSize.height > self.scrollView.frame.size.height)
+    {
+        self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.frame.size.height);
+    
+    }
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+-(void)viewDidLayoutSubviews
+{
+    [super viewDidLayoutSubviews];
+    NSLog(@"ViewDidLayoutSubviews");
+
 }
-*/
+
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    
+
+}
+
+
+
+-(void)closeAction:(id)sender
+{
+
+    UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:@"action" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"setHTML", @"getHTML", @"IncreaseListLevel", nil];
+    
+    [ac showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    NSLog(@"buttonIndex = %ld", (long)buttonIndex);
+
+    if(buttonIndex == 0)
+    {
+        NSString *html = @"<blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote>  <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote> <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote> <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote> <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote>  <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote> <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote> <blockquote><a href=\"http://www.apple.com.tw'>Apple</a> Inc. is an American multinational technology company headquartered in Cupertino, California, that designs, develops, and sells consumer electronics, computer software, online services, and personal computers. Wikipedia</blockquote> ";
+        [self.editorController setHTML:html];
+    }
+    
+    
+    if(buttonIndex == 1)
+    {
+        NSString *html = [self.editorController getHTML];
+        NSLog(@"html = %@", html);
+    }
+    
+    if(buttonIndex == 2)
+    {
+        [self.editorController increaseListLevel];
+    
+    }
+    
+    
+    
+}
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    
+    CGSize endkbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
+    
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, endkbSize.height, 0.0);
+ 
+    [UIView animateWithDuration:[info[UIKeyboardAnimationDurationUserInfoKey] doubleValue] animations:^{
+        self.scrollView.contentInset = contentInsets;
+        self.scrollView.scrollIndicatorInsets = contentInsets;
+    } completion:^(BOOL finished) {
+        //self.tableView.scrollIndicatorInsets = contentInsets;
+    }];
+    
+}
+
+-(void)keyboardWillBeHidden:(NSNotification*)notification
+{
+    UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, 0, 0.0);
+    self.scrollView.contentInset = contentInsets;
+    self.scrollView.scrollIndicatorInsets = contentInsets;
+    [self.scrollView setNeedsLayout];
+}
+
+
 
 @end

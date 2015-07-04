@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B5E3C0551B478C7700B93375 /* SQScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = B5E3C0541B478C7700B93375 /* SQScrollView.m */; };
 		F122B63E1AF7016400539423 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B63D1AF7016400539423 /* main.m */; };
 		F122B6411AF7016400539423 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B6401AF7016400539423 /* AppDelegate.m */; };
 		F122B6441AF7016400539423 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B6431AF7016400539423 /* ViewController.m */; };
@@ -14,6 +15,12 @@
 		F122B6491AF7016400539423 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F122B6481AF7016400539423 /* Images.xcassets */; };
 		F122B64C1AF7016400539423 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F122B64A1AF7016400539423 /* LaunchScreen.xib */; };
 		F122B6581AF7016400539423 /* Squire_iOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B6571AF7016400539423 /* Squire_iOSTests.m */; };
+		F122B6661AF7068C00539423 /* document.html in Resources */ = {isa = PBXBuildFile; fileRef = F122B6631AF7068C00539423 /* document.html */; };
+		F122B6671AF7068C00539423 /* squire-raw.js in Resources */ = {isa = PBXBuildFile; fileRef = F122B6641AF7068C00539423 /* squire-raw.js */; };
+		F122B6681AF7068C00539423 /* squire.js in Resources */ = {isa = PBXBuildFile; fileRef = F122B6651AF7068C00539423 /* squire.js */; };
+		F122B66A1AF706E900539423 /* squire-editor.html in Resources */ = {isa = PBXBuildFile; fileRef = F122B6691AF706E900539423 /* squire-editor.html */; };
+		F122B66D1AF7081B00539423 /* SQRichEditorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B66C1AF7081B00539423 /* SQRichEditorViewController.m */; };
+		F122B6701AF70BA600539423 /* SQSquireEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = F122B66F1AF70BA600539423 /* SQSquireEditor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +34,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B5E3C0531B478C7700B93375 /* SQScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQScrollView.h; sourceTree = "<group>"; };
+		B5E3C0541B478C7700B93375 /* SQScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQScrollView.m; sourceTree = "<group>"; };
 		F122B6381AF7016400539423 /* Squire-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Squire-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F122B63C1AF7016400539423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F122B63D1AF7016400539423 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,6 +49,14 @@
 		F122B6511AF7016400539423 /* Squire-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Squire-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F122B6561AF7016400539423 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F122B6571AF7016400539423 /* Squire_iOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Squire_iOSTests.m; sourceTree = "<group>"; };
+		F122B6631AF7068C00539423 /* document.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = document.html; sourceTree = "<group>"; };
+		F122B6641AF7068C00539423 /* squire-raw.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = "squire-raw.js"; sourceTree = "<group>"; };
+		F122B6651AF7068C00539423 /* squire.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = squire.js; sourceTree = "<group>"; };
+		F122B6691AF706E900539423 /* squire-editor.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "squire-editor.html"; sourceTree = "<group>"; };
+		F122B66B1AF7081B00539423 /* SQRichEditorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQRichEditorViewController.h; sourceTree = "<group>"; };
+		F122B66C1AF7081B00539423 /* SQRichEditorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQRichEditorViewController.m; sourceTree = "<group>"; };
+		F122B66E1AF70BA600539423 /* SQSquireEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SQSquireEditor.h; sourceTree = "<group>"; };
+		F122B66F1AF70BA600539423 /* SQSquireEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SQSquireEditor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +77,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B5E3C0561B47C0E000B93375 /* sample */ = {
+			isa = PBXGroup;
+			children = (
+				F122B66B1AF7081B00539423 /* SQRichEditorViewController.h */,
+				F122B66C1AF7081B00539423 /* SQRichEditorViewController.m */,
+				B5E3C0531B478C7700B93375 /* SQScrollView.h */,
+				B5E3C0541B478C7700B93375 /* SQScrollView.m */,
+			);
+			name = sample;
+			sourceTree = "<group>";
+		};
 		F122B62F1AF7016400539423 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +109,9 @@
 		F122B63A1AF7016400539423 /* Squire-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				B5E3C0561B47C0E000B93375 /* sample */,
+				F122B6621AF704F700539423 /* classes */,
+				F122B6611AF703BF00539423 /* resources */,
 				F122B63F1AF7016400539423 /* AppDelegate.h */,
 				F122B6401AF7016400539423 /* AppDelegate.m */,
 				F122B6421AF7016400539423 /* ViewController.h */,
@@ -117,6 +148,26 @@
 				F122B6561AF7016400539423 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F122B6611AF703BF00539423 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				F122B6631AF7068C00539423 /* document.html */,
+				F122B6641AF7068C00539423 /* squire-raw.js */,
+				F122B6651AF7068C00539423 /* squire.js */,
+				F122B6691AF706E900539423 /* squire-editor.html */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		F122B6621AF704F700539423 /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				F122B66E1AF70BA600539423 /* SQSquireEditor.h */,
+				F122B66F1AF70BA600539423 /* SQSquireEditor.m */,
+			);
+			path = classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,8 +251,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F122B6471AF7016400539423 /* Main.storyboard in Resources */,
+				F122B66A1AF706E900539423 /* squire-editor.html in Resources */,
+				F122B6681AF7068C00539423 /* squire.js in Resources */,
+				F122B6671AF7068C00539423 /* squire-raw.js in Resources */,
 				F122B64C1AF7016400539423 /* LaunchScreen.xib in Resources */,
 				F122B6491AF7016400539423 /* Images.xcassets in Resources */,
+				F122B6661AF7068C00539423 /* document.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,8 +275,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F122B6441AF7016400539423 /* ViewController.m in Sources */,
+				F122B6701AF70BA600539423 /* SQSquireEditor.m in Sources */,
 				F122B6411AF7016400539423 /* AppDelegate.m in Sources */,
 				F122B63E1AF7016400539423 /* main.m in Sources */,
+				F122B66D1AF7081B00539423 /* SQRichEditorViewController.m in Sources */,
+				B5E3C0551B478C7700B93375 /* SQScrollView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,6 +476,7 @@
 				F122B65D1AF7016400539423 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F122B65E1AF7016400539423 /* Build configuration list for PBXNativeTarget "Squire-iOSTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +485,7 @@
 				F122B6601AF7016400539423 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

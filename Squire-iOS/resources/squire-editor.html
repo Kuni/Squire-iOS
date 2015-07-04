@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <style type="text/css">
+            html, body{
+                margin: 0;
+                padding: 0;
+                border: 0;
+                outline: 0;
+                font-size: 100%;
+                vertical-align: baseline;
+                background: transparent;
+            }
+        </style>
+
+
+        <title>Square Html5 Editor</title>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no " />
+         
+        <script>
+            var editor, iframe;
+            var cr_bridge, cr_escape;
+            window.onload = function(){
+                // load Squire Editor
+                iframe = document.getElementById("editor");
+                editor = iframe.contentWindow.editor;
+                
+                // iframe extension
+                iframe.resize = function(width, height){
+                    iframe.width = width;
+                    iframe.height = height;
+                }
+                
+                cr_bridge = function(str){
+                    //editor.increaseQuoteLevel();
+                    eval('editor.'+str);
+                }
+                
+                
+                editor.addEventListener('keydown', function(e){
+                                        
+                                        
+                                        var squireDocument = editor.getDocument();
+                                        window.location = "squire-editor://notification?height="+squireDocument.height+"";
+
+                                        
+                                        });
+                
+                
+            };
+
+
+
+        
+        
+        </script>
+    </head>
+    <body id="mainbody">
+        <iframe id="editor" src="./document.html" frameBorder="0" ></iframe>
+        
+        <!--<a href="#" onclick="editor.increaseQuoteLevel();">click</a>-->
+        <!-- frameBorder="0"  style="background: #336699;" -->
+    </body>
+</html>

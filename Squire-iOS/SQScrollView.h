@@ -10,4 +10,9 @@
 
 @interface SQScrollView : UIScrollView
 
+@property(nonatomic, weak)UILabel   *textLabel;
+@property(nonatomic, weak)UILabel   *detailView;
+
+@property(nonatomic, weak)UIWebView *webView;
+
 @end
