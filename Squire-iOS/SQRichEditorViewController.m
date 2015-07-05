@@ -19,6 +19,8 @@
 @property(nonatomic, strong)SQSquireEditor  *editorController;
 
 
+@property(nonatomic, assign)CGFloat         keyboradHeight; // tmp
+
 @end
 
 @implementation SQRichEditorViewController
@@ -40,7 +42,7 @@
     
     // SQSquireEditor必要。
     self.navigationController.navigationBar.translucent = NO;
-    self.automaticallyAdjustsScrollViewInsets = NO;  // 防止WebBrowserView 因鍵盤上來被移動。
+
     self.editorController = [[SQSquireEditor alloc] initWithWebView:self.scrollView.webView];
 
     
@@ -61,17 +63,27 @@
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(keyboardWillBeHidden:)
                                                  name:UIKeyboardWillHideNotification object:nil];
+    
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;  // 防止WebBrowserView 因鍵盤上來被移動。
 }
 
 -(void)refreshScrollView
 {
     NSLog(@"refresh scrollview");
-    if(self.scrollView.contentSize.height > self.scrollView.frame.size.height)
+    [self performSelector:@selector(delayRefresh) withObject:nil afterDelay:0.3];
+}
+
+-(void)delayRefresh
+{
+    NSLog(@"delayRefresh offset = %f", self.scrollView.contentSize.height - self.editorController.offsetHeight);
+    if(self.scrollView.contentSize.height >= self.scrollView.frame.size.height && self.scrollView.contentSize.height - self.editorController.offsetHeight < 200)
     {
-        self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.frame.size.height);
-    
+        self.scrollView.contentOffset = CGPointMake(0, self.scrollView.contentSize.height - self.scrollView.frame.size.height + self.keyboradHeight);
+        //self.scrollView.contentOffset = CGPointMake(0, self.editorController.offsetHeight);
     }
 }
+
 
 
 
@@ -95,6 +107,9 @@
 -(void)closeAction:(id)sender
 {
 
+    [self.editorController getHTML];
+    return;
+    
     UIActionSheet *ac = [[UIActionSheet alloc] initWithTitle:@"action" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"setHTML", @"getHTML", @"IncreaseListLevel", nil];
     
     [ac showInView:self.view];
@@ -132,12 +147,14 @@
     NSDictionary* info = [aNotification userInfo];
     
     CGSize endkbSize = [[info objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue].size;
-    
+    self.keyboradHeight = endkbSize.height;
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, endkbSize.height, 0.0);
  
     [UIView animateWithDuration:[info[UIKeyboardAnimationDurationUserInfoKey] doubleValue] animations:^{
         self.scrollView.contentInset = contentInsets;
         self.scrollView.scrollIndicatorInsets = contentInsets;
+        
+        
     } completion:^(BOOL finished) {
         //self.tableView.scrollIndicatorInsets = contentInsets;
     }];
@@ -146,10 +163,12 @@
 
 -(void)keyboardWillBeHidden:(NSNotification*)notification
 {
+    self.keyboradHeight = 0;
     UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, 0, 0.0);
     self.scrollView.contentInset = contentInsets;
     self.scrollView.scrollIndicatorInsets = contentInsets;
     [self.scrollView setNeedsLayout];
+    
 }
 
 

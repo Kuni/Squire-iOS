@@ -17,6 +17,8 @@ extern NSString *const SQSquireEditorFrameChange;
 
 @interface SQSquireEditor : NSObject
 
+@property(nonatomic, readonly)float   offsetHeight;
+
 -(instancetype)initWithWebView:(UIWebView*)webView;
 -(void)resizeEditorView;
 -(void)iframeResizeWithSize:(CGSize)size;
@@ -25,6 +27,7 @@ extern NSString *const SQSquireEditorFrameChange;
 -(NSString*)getHTML;
 -(void)setHTML:(NSString*)html;
 -(void)increaseListLevel;
+-(void)getSelection;
 
 
 @end

@@ -14,7 +14,9 @@ NSString *const SQSquireEditorFrameChange = @"SQSquireEditorFrameChange";
 
 @interface SQSquireEditor ()<UIWebViewDelegate>
 
-@property(nonatomic, weak)UIWebView *webView;
+@property(nonatomic, weak)UIWebView     *webView;
+@property(nonatomic, strong)NSString    *lastChangeHeight;
+
 
 @end
 
@@ -30,12 +32,14 @@ NSString *const SQSquireEditorFrameChange = @"SQSquireEditorFrameChange";
 
         self.webView = webView;
         self.webView.delegate = self;
-        self.webView.scalesPageToFit = NO;
+        self.webView.scalesPageToFit = YES;
         self.webView.scrollView.scrollEnabled = NO;
-        self.webView.scrollView.backgroundColor = [UIColor clearColor];
+        self.webView.scrollView.backgroundColor = [UIColor yellowColor];
         self.webView.scrollView.clipsToBounds = NO;
         self.webView.backgroundColor = [UIColor clearColor];
         [self loadEditor];
+        
+
         
         //[self startObservingContentSizeChangesInWebView:self.webView];
         
@@ -69,13 +73,49 @@ NSString *const SQSquireEditorFrameChange = @"SQSquireEditorFrameChange";
         if([request.URL.host isEqualToString:@"notification"])
         {
             // 拿出query
-            NSString *query = request.URL.query;
-            NSArray *components = [query componentsSeparatedByString:@"="];
-            NSString *height = components.lastObject;
+            NSString *queryString = request.URL.query;
+            
+            NSArray *queries = [queryString componentsSeparatedByString:@"&"];
+            NSMutableDictionary *queryStringDictionary = [[NSMutableDictionary alloc] init];
+            
+            for(NSString *keyValuePair in queries)
+            {
+                NSArray *pairComponents = [keyValuePair componentsSeparatedByString:@"="];
+                NSString *key = [[pairComponents firstObject] stringByRemovingPercentEncoding];
+                NSString *value = [[pairComponents lastObject] stringByRemovingPercentEncoding];
+                
+                [queryStringDictionary setObject:value forKey:key];
+            }
+            
+            NSString *height = queryStringDictionary[@"height"];
+            NSString *offsetHeight = queryStringDictionary[@"offsetHeight"];
+        
+            if(offsetHeight.length > 0)
+            {
+                _offsetHeight = [offsetHeight floatValue];
+            }
+            
+            //NSArray *components = [queryString componentsSeparatedByString:@"="];
+            //NSString *height = components.lastObject;
+            
+            if([self.lastChangeHeight isEqualToString:height])
+            {
+                return NO;
+            }
+            
+            self.lastChangeHeight = height;
+            
+            
             CGRect frame = self.webView.frame;
             frame.size.height = [height integerValue];
             self.webView.frame = frame;
             //self.webView.scrollView.contentOffset = CGPointZero;
+            
+            //
+            UIEdgeInsets contentInsets = UIEdgeInsetsMake(0, 0.0, 0, 0.0);
+            self.webView.scrollView.contentInset = contentInsets;
+            self.webView.scrollView.scrollIndicatorInsets = contentInsets;
+            //
             
             [[NSNotificationCenter defaultCenter] postNotificationName:SQSquireEditorFrameChange object:nil];
             
@@ -136,10 +176,21 @@ NSString *const SQSquireEditorFrameChange = @"SQSquireEditorFrameChange";
 {
     NSString *command = [NSString stringWithFormat:@"editor.getHTML();"];
     NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:command];
+    
+//    NSString *find = @"<br>";
+//    
+//    NSInteger strCount = [result length] - [[result stringByReplacingOccurrencesOfString:find withString:@""] length];
+//    strCount /= [find length];
+//    
+//    NSLog(@"count = %d", strCount);
+//    
+    
     NSLog(@"result = %@", result);
     
     return result;
 }
+
+
 
 -(void)setHTML:(NSString*)html
 {
@@ -172,6 +223,12 @@ NSString *const SQSquireEditorFrameChange = @"SQSquireEditorFrameChange";
     NSLog(@"result = %@", result);
 }
 
+-(void)getSelection
+{
+    NSString *command = [NSString stringWithFormat:@"cr_bridge('getSelection()');"];
+    NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:command];
+    NSLog(@"result = %@", result);
+}
 
 
 // This is deprecated

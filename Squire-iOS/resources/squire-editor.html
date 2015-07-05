@@ -40,13 +40,30 @@
                 
                 editor.addEventListener('keydown', function(e){
                                         
-                                        
+                                        var selection = editor.getSelection();
                                         var squireDocument = editor.getDocument();
-                                        window.location = "squire-editor://notification?height="+squireDocument.height+"";
-
                                         
-                                        });
-                
+                                        if(selection.endContainer.offsetTop == undefined){
+                                            window.location = "squire-editor://notification?height="+squireDocument.height;
+                                        }else{
+                                            window.location = "squire-editor://notification?height="+squireDocument.height+"&offsetHeight="+selection.endContainer.offsetTop;
+                                        }
+                                        
+                                       
+                                        
+                                
+                                        }, false);
+                                        
+                                        
+<!--                                        editor.addEventListener('keydown', function ( e ) {-->
+<!--                                                                -->
+<!--                                                                var tmp= editor.getSelection();-->
+<!--                                                                console.log(tmp.endContainer.offsetTop);-->
+<!--                                                                  }, false );-->
+
+                                                                  
+                                        
+                                        
                 
             };
 
