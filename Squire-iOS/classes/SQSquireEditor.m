@@ -197,6 +197,9 @@ NSString *const SQSquireEditorFrameChange = @"SQSquireEditorFrameChange";
     
     html = [html stringByReplacingOccurrencesOfString:@"'" withString:@"\'"];
     html = [html stringByReplacingOccurrencesOfString:@"\"" withString:@"\'"];
+    html = [html stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    html = [html stringByReplacingOccurrencesOfString:@"\r" withString:@""];
+    
     NSLog(@"html = %@", html);
     NSString *command = [NSString stringWithFormat:@"editor.setHTML(\"%@\");", html];
     NSString *result = [self.webView stringByEvaluatingJavaScriptFromString:command];
